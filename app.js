@@ -256,7 +256,7 @@ app.post('/courses/bySubject',
         const courses = await Course.find({ subject: subject, independent_study: false }).sort({ term: 1, num: 1, section: 1 })
 
         res.locals.courses = courses
-        const times2str = times2str
+        const times2str = res.locals.times2str
             //res.json(courses)
         res.render('courselist')
     }
@@ -268,7 +268,7 @@ app.get('/courses/show/:courseId',
         const { courseId } = req.params;
         const course = await Course.findOne({ _id: courseId })
         res.locals.course = course
-        const times2str = times2str
+        const times2str = res.locals.times2str
             //res.json(course)
         res.render('course')
     }
@@ -295,7 +295,7 @@ app.post('/courses/byInst',
             .sort({ term: 1, num: 1, section: 1 })
             //res.json(courses)
         res.locals.courses = courses
-        const times2str = times2str
+        const times2str = res.locals.times2str
         res.render('courselist')
     }
 )
