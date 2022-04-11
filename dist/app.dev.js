@@ -283,7 +283,7 @@ function getNum(coursenum) {
   return coursenum.slice(0, i);
 }
 
-function times2str(times, strTime) {
+function times2str(times) {
   // convert a course.times object into a list of strings
   // e.g ["Lecture:Mon,Wed 10:00-10:50","Recitation: Thu 5:00-6:30"]
   if (!times || times.length == 0) {
