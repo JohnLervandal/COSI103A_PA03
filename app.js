@@ -196,7 +196,7 @@ function times2str(times) {
     if (!times || times.length == 0) {
         return ["not scheduled"]
     } else {
-        return times.map(x => time2str(x))
+        return times.map(x => strTimes(x))
     }
 
 }
