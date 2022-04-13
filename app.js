@@ -196,7 +196,7 @@ function times2str(times) {
     if (!times || times.length == 0) {
         return ["not scheduled"]
     } else {
-        return times.map(x => strTimes(x))
+        return times.map(x => time2str(x))
     }
 
 }
@@ -241,6 +241,7 @@ app.get('/upsertDB',
             const num = getNum(coursenum);
             course.num = num
             course.suffix = coursenum.slice(num.length)
+            course.strTimes = times2str(course.times)
             await Course.findOneAndUpdate({ subject, coursenum, section, term }, course, { upsert: true })
         }
         const num = await Course.find({}).count();
