@@ -305,7 +305,8 @@ app.post('/courses/byKeyword',
     // show list of courses in a given subject
     async(req, res, next) => {
         const { keyword } = req.body;
-        const courses = await Course.find({name:keyword}, {independent_study: false }).sort({ term: 1, num: 1, section: 1 })
+        const courses = await Course.find({name: keyword}, {independent_study: false }).sort({ term: 1, num: 1, section: 1 })
+        
 
         res.locals.courses = courses
         res.locals.strTimes = courses.strTimes
