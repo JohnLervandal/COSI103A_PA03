@@ -5,7 +5,7 @@
     <hr>
     <ol>
         <% for (item of items){%>
-            <li class="mb-2">          
+            <li class="mb-2 bg-secondary bg-opacity-75">          
                 <b><%= item.title%>:</b><i><%= item.description %></i>
                 <% if (item.completed) {%>
                     <a href="/todo/completed/false/<%= item._id%>">  Done</a>
@@ -19,11 +19,12 @@
         <% }%>
     </ol>
     <hr>
+    <div class="d-flex align-items-center justify-content-center">
     <form method="post" action="/todo/add">
         title:<input type="text" name="title"><br>
         description:<input type="text" name="description"><br>
         <input type="submit" value="Save Item"><br>
     </form>
-    
+</div>
 
 
